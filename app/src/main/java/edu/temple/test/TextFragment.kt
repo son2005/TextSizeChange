@@ -11,13 +11,6 @@ import androidx.lifecycle.ViewModelProvider
 class TextFragment : Fragment() {
 
     private lateinit var textView: TextView
-    private lateinit var textViewModel: TextViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        textViewModel = ViewModelProvider(requireActivity()) [TextViewModel::class.java]
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +27,6 @@ class TextFragment : Fragment() {
         // Only perform update if textView is previously initialized
         if (::textView.isInitialized)
             textView.textSize = size
-
     }
 
 }
